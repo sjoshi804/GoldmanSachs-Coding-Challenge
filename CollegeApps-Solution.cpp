@@ -40,4 +40,19 @@ vector<int> allocate(vector<int> collegeSeatsArray, vector<int> studentScoresArr
   
   for (int i = 0; i < studentScoresArray.size(); i++)
   {
-    for (int j = 0; j 
+    vector<vector<int>> currentStudentPreferences = scoresAndPreferences[studentScoresArray[i]];
+    for (int j = 0; j < currentStudentPreferences.size(); j++)
+      for (int k = 0; k < currentStudentPreferences[j].size(); k++)
+      {
+        if (currentStudentPreferences[j][k] > 0)
+        {
+          currentStudentPreferences[j][k]--;
+          studentsUnallocated--;
+          seatsLeft--;
+          break;
+        }
+      }
+  }
+  
+  return vector<int> results {seatsLeft, studentsUnallocated};
+}
