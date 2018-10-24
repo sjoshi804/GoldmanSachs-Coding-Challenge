@@ -1,0 +1,22 @@
+In country X, colleges pick students strictly based on their scores i.e. students with higher scores get first pick. 
+All students have a list of preferences of colleges that they would like to attend, and if on their turn, the number
+of seats left in their top choice is 0, they apply to their next choice - so on and so forth, in case none of the 
+colleges on a student's preference list has seats left (on their turn), the student doesn't go to college.
+Colleges have a fixed number of seats.
+
+The number of students, their test scores, the number of colleges, the number of seats available at each college
+and the preference list of every student will be provided.
+
+Input:
+NumberOfStudents
+Score1
+Score2
+...
+NumberOfColleges
+Seats available at College 1
+Seats available at College 2
+...
+NumberOfPreferencesInPrefenceList
+CollegePick1 CollegePick2 ...
+CollegePick1 CollegePick2 ...
+...
