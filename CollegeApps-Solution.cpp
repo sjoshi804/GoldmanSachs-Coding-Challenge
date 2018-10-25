@@ -7,13 +7,20 @@
 // and the second element indicated the number of students who didn't go to college
 // Each student only gets allocated to one college. 
 
-// Helper function
+// Helper functions
 int sumElements(vector<int> vec)
 {
   int sum = 0;
   for (int i = 0; i < vec.size(); i++)
     sum += vec[i];
   return sum;
+}
+
+vector<int> uniqueSort(vector<int> vec)
+{
+  sort(vec.begin(), vec.end());
+  vec.erase(unique(vec.begin(), vec.end()), vec.end());
+  return vec;
 }
 
 // The method used in this function ensures that in cases where students have the same scores, the student whose score
@@ -36,7 +43,7 @@ vector<int> allocate(vector<int> collegeSeatsArray, vector<int> studentScoresArr
     }
   }
   
-  sort(studentScoresArray.begin(), studentScoresArray.end());
+  studentScoresArray = uniqueSort(studentScoresArray);
   
   for (int i = 0; i < studentScoresArray.size(); i++)
   {
